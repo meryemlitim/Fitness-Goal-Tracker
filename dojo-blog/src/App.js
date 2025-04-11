@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import './index.css';
 
+
 function App() {
   // 1. Initialize todos state from localStorage
   const [todos, setTodos] = useState(() => {
@@ -14,16 +15,17 @@ function App() {
     text: "",
     target: "",
     category:"",
+    unit:"",
   });
 
   const handleAddTodo = (e) => {
     e.preventDefault(); // Prevent form submission
 
     if (data.text && data.target && data.category) {
-      const newTodo = { text: data.text, target: data.target , category: data.category };
+      const newTodo = { text: data.text, target: data.target , category: data.category ,unit: data.unit };
       const updatedTodos = [...todos, newTodo];
       setTodos(updatedTodos);
-      setData({ text: "", target: "" ,category:"" }); // Reset input fields after submission
+      setData({ text: "", target: "" ,category:"" ,unit:""}); // Reset input fields after submission
     }
   };
 
@@ -71,26 +73,61 @@ function App() {
             onChange={(e) => setData({ ...data, target: e.target.value })}
           />
           <div className="col-span-full">
+            <label className="block mb-2 font-medium text-gray-700">unit :</label>
+            <div className="flex flex-wrap gap-4">
+              <label className="flex items-center gap-2">
+                <input type="radio" name="goal-unit " value="pas" className="accent-blue-500" onChange={(e) => setData({ ...data, unit  : e.target.value })}
+  checked={data.unit=== "pas"} /> 
+                Pas 
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="radio" name="goal-unit" value="km" className="accent-blue-500" onChange={(e) => setData({ ...data,unit: e.target.value })}
+  checked={data.unit=== "km"} />                              
+                Km
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="radio" name="goal-unit" value="litre" className="accent-blue-500" onChange={(e) => setData({ ...data,unit: e.target.value })}
+  checked={data.unit=== "litre"}  />
+                Litre
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="radio" name="goal-unit" value="heur" className="accent-blue-500" onChange={(e) => setData({ ...data,unit: e.target.value })}
+  checked={data.unit=== "heur"}  />
+                heur
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="radio" name="goal-unit" value="kg" className="accent-blue-500" onChange={(e) => setData({ ...data, unit: e.target.value })}
+  checked={data.unit=== "kg"}  />
+                kg
+              </label>
+            </div>
+          </div>
+          <div className="col-span-full">
             <label className="block mb-2 font-medium text-gray-700">Catégorie :</label>
             <div className="flex flex-wrap gap-4">
               <label className="flex items-center gap-2">
-                <input type="radio" name="goal-type" value="steps" className="accent-blue-500" onChange={(e) => setData({ ...data, category: e.target.value })}/>
+                <input type="radio" name="goal-type" value="steps" className="accent-blue-500" onChange={(e) => setData({ ...data, category: e.target.value })}
+  checked={data.category === "steps"} />  
                 Pas
               </label>
               <label className="flex items-center gap-2">
-                <input type="radio" name="goal-type" value="water" className="accent-blue-500" onChange={(e) => setData({ ...data, category: e.target.value })} />
+                <input type="radio" name="goal-type" value="water" className="accent-blue-500" onChange={(e) => setData({ ...data, category: e.target.value })}
+  checked={data.category === "water"} />
                 Verres d'eau
               </label>
               <label className="flex items-center gap-2">
-                <input type="radio" name="goal-type" value="workout" className="accent-blue-500" onChange={(e) => setData({ ...data, category: e.target.value })} />
+                <input type="radio" name="goal-type" value="workout" className="accent-blue-500" onChange={(e) => setData({ ...data, category: e.target.value })}
+  checked={data.category === "workout"}  />
                 Séances
               </label>
               <label className="flex items-center gap-2">
-                <input type="radio" name="goal-type" value="sleep" className="accent-blue-500" onChange={(e) => setData({ ...data, category: e.target.value })} />
+                <input type="radio" name="goal-type" value="sleep" className="accent-blue-500" onChange={(e) => setData({ ...data, category: e.target.value })}
+  checked={data.category === "sleep"}  />
                 Sommeil
               </label>
               <label className="flex items-center gap-2">
-                <input type="radio" name="goal-type" value="nutrition" className="accent-blue-500" onChange={(e) => setData({ ...data, category: e.target.value })} />
+                <input type="radio" name="goal-type" value="nutrition" className="accent-blue-500" onChange={(e) => setData({ ...data, category: e.target.value })}
+  checked={data.category === "nutrition"}  />
                 Nutrition
               </label>
             </div>
@@ -110,7 +147,7 @@ function App() {
           <ul className="space-y-2">
           {todos.map((item, index) => (
   <li key={index} className="flex justify-between items-center bg-white p-4 rounded shadow">
-    <span>{item.text} - {item.target}</span>
+    <span>{item.text} - {item.target} {item.unit}</span>
     <span className='cursor-pointer' onClick={() => deleteClick(index)}>❌</span>
   </li>
 ))}
@@ -127,7 +164,9 @@ function App() {
         </div>
       </section>
     </div>
+    
   );
+  
 }
 
 export default App;
