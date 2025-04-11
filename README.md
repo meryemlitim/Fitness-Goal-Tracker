@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+Fitness Goal Tracker
+Fitness Goal Tracker is a web application designed to help users set, track, and achieve their fitness goals, such as steps taken, workout sessions, or daily water intake. The application provides a simple and intuitive interface for users to log daily progress, view their achievements, and receive performance summaries. Built for beginners learning frameworks like Vue.js or React, it utilizes localStorage to ensure data persistence in the browser while focusing on core concepts of modern frontend frameworks.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project Context
+Fitness Goal Tracker allows users to manage their personal fitness goals, such as walking a certain number of steps, drinking a set amount of water, or completing workout sessions. It is a great way to track fitness goals on a day-to-day basis, offering insights into their progress and motivating them to stay on track.
 
-## Available Scripts
+Core Features
+1. Goal Management (CRUD)
+Users can create, read, update, and delete their fitness goals.
 
-In the project directory, you can run:
+Each goal can include details like the target (e.g., 10,000 steps or 8 cups of water) and category (e.g., "Steps", "Water", "Workout").
 
-### `npm start`
+2. Track Daily Progress
+A form allows users to log their daily progress for each goal (e.g., steps taken, workouts completed).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Goal List
+The app displays a list of all active goals, showing details like:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The goal’s name.
 
-### `npm test`
+The current progress.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A visual indicator (such as a progress bar or percentage) to track how close the user is to reaching the goal.
 
-### `npm run build`
+4. Performance Summary
+A section that provides an overview of key statistics, such as:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The total number of goals achieved in the week.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The average progress across all goals.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. Local Storage
+All goals and progress data are saved in the browser’s localStorage, ensuring data persists between sessions without requiring a backend server.
 
-### `npm run eject`
+Technologies Used
+Frontend Framework: React (or Vue.js)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Styling: Tailwind CSS
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Data Persistence: LocalStorage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Installation
+Clone the repository to your local machine:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/fitness-goal-tracker.git
+Navigate to the project directory:
 
-## Learn More
+bash
+Copy
+Edit
+cd fitness-goal-tracker
+Install the dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash
+Copy
+Edit
+npm install
+Start the application:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+bash
+Copy
+Edit
+npm start
+The application will be available at http://localhost:3000.
 
-### Code Splitting
+How to Use
+Add Goals: Click the "Ajouter un Objectif" button, enter a goal name (e.g., "Marcher 10 000 pas"), set a target value (e.g., 10,000), and select a category.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Track Progress: Each day, log your progress for each goal (e.g., number of steps taken).
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+View Summary: Check the "Résumé des Performances" section to see how many goals you've completed this week and your overall progress.
