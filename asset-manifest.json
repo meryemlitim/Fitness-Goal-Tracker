@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Fitness-Goal-Tracker/static/css/main.6c6bad65.css",
+    "main.js": "/Fitness-Goal-Tracker/static/js/main.d2646929.js",
+    "static/js/488.fef93cc1.chunk.js": "/Fitness-Goal-Tracker/static/js/488.fef93cc1.chunk.js",
+    "index.html": "/Fitness-Goal-Tracker/index.html",
+    "main.6c6bad65.css.map": "/Fitness-Goal-Tracker/static/css/main.6c6bad65.css.map",
+    "main.d2646929.js.map": "/Fitness-Goal-Tracker/static/js/main.d2646929.js.map",
+    "488.fef93cc1.chunk.js.map": "/Fitness-Goal-Tracker/static/js/488.fef93cc1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6c6bad65.css",
+    "static/js/main.d2646929.js"
+  ]
+}
