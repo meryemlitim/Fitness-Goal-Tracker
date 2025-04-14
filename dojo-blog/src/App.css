@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 .App {
@@ -31,3 +34,5 @@
   .trash {
     cursor: pointer;
   }
+
+ 
